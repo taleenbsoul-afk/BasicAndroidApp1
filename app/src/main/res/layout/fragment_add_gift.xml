@@ -5,10 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".AddGiftFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gender"
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <TextView
+            android:id="@+id/ageRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ageRange"
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="319dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

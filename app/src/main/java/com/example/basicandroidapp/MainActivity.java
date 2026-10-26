@@ -1,6 +1,7 @@
 package com.example.basicandroidapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -8,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +27,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button btnAdd=findViewById(R.id.btnAdd);
         Button btnShow=findViewById(R.id.btnShow);
-        btnAdd.setOnClickListener();
+        btnAdd.setOnClickListener(v ->showFragment(new AddGiftFragment()));
+        btnShow.setOnClickListener(v ->showFragment(new showGiftFragment()));
+        if (savedInstanceState== null){
+            showFragment(new AdminFragment());
+        }
 
 
     }
 
+    private void showFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction ft = transaction;
+        ft  = ft.replace(R.id.main, fragment);
+        ft.commit();
+    }
+
 
 }
+
+
